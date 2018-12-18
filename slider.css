@@ -61,3 +61,12 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+#currentimg {
+    animation: anim 1s ease-out ;
+}
+
+@keyframes anim {
+    from {transform: scaleX(0);}
+    to{transform: scaleX(1);}
+}

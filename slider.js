@@ -7,11 +7,19 @@ let img3 = document.getElementById("3img");
 let arr = [`${img1.src}`,`${img2.src}`,`${img3.src}`];
 
 prev.addEventListener("click", function() {
+   
     for(let i = 0; i < arr.length; i++ ) {
         if(currentimg.src === arr[0]){return;}
-
+         
         if(currentimg.src === arr[i]){
             currentimg.src = arr[i-1];
+             currentimg.animate([
+              { transform: 'translateX(-30%)' }, 
+              { transform: 'translateX(0%)' }
+            ], { 
+              duration: 400,
+            });
+
             select();
             return;
         }
@@ -25,6 +33,13 @@ next.addEventListener("click",function() {
 
         if(currentimg.src === arr[i]){
             currentimg.src = arr[i+1];
+            currentimg.animate([
+              { transform: 'translateX(30%)' }, 
+              { transform: 'translateX(0%)' }
+            ], { 
+              duration: 400,
+            });
+
             select();
             return;
         }
